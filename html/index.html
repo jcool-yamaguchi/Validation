@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&family=Noto+Sans+JP:wght@400;700&display=swap"
+    rel="preload" as="style" />
+  <title>Validation</title>
+</head>
+
+<body>
+  <h2>お問い合わせ</h2>
+  <form action="/form.php" method="post">
+    <fieldset>
+      <div class="item">
+        <label for="firstname">姓</label>
+        <span>必須</span>
+      </div>
+      <input 
+      type="text" 
+      id="inputFirstName" 
+      name="firstname"
+      autocomplete="name"
+      placeholder="山田"
+      title="姓の入力は必須です"
+      required="required">
+    </fieldset>
+
+    <fieldset>
+      <div class="item">
+        <label for="firstname">名</label>
+        <span>必須</span>
+      </div>
+      <input 
+      type="text" 
+      id="inputLastName" 
+      name="name"
+      autocomplete="name"
+      placeholder="太郎"
+      title="名の入力は必須です"
+      required="required">
+    </fieldset>
+
+    <fieldset>
+      <div class="item">
+        <label for="name_kana">フリガナ</label>
+        <span>必須</span>
+      </div>
+      <input 
+      type="text" 
+      id="inputKana" 
+      name="namekana"
+      autocomplete="name_kana"
+      placeholder="ヤマダタロウ"
+      title="フリガナの入力は必須です"
+      required="required">
+      <div class="err-msg-kana">フリガナが正しく入力されていません</div>
+    </fieldset>
+
+    <fieldset>
+      <div class="item">
+        <label for="tel">電話番号</label>
+        <span>必須</span>
+      </div>
+      <input 
+      type="text" 
+      id="inputTel" 
+      name="tel"
+      autocomplete="tel"
+      placeholder="012-3456-7890"
+      title="電話番号の入力は必須です"
+      required="required">
+      <div class="err-msg-tel">電話番号が正しく入力されていません</div>
+    </fieldset>
+
+    <fieldset>
+      <div class="item">
+        <label for="mail">メールアドレス</label>
+        <span>必須</span>
+      </div>
+      <input 
+      type="text" 
+      id="inputMail" 
+      name="mail"
+      autocomplete="mail"
+      placeholder="coding@gmail.com"
+      title="メールアドレスの入力は必須です"
+      required="required">
+      <div class="err-msg-mail">メールアドレスが正しく入力されていません</div>
+    </fieldset>
+
+    <fieldset>
+      <div class="item">
+        <label for="gender">性別</label>
+        <span>必須</span>
+      </div>
+      <div class="itemRadio">
+        <input type="radio" id="inputGender" name="gender">
+        <label for="datail1">男</label>
+      </div>
+      <div class="itemRadio">
+        <input type="radio" id="gender" name="gender">
+        <label for="datail1">女</label>
+      </div>
+      <div class="itemRadio">
+        <input type="radio" id="gender" name="gender">
+        <label for="datail1">その他</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="age">年齢</label>
+      <select name="age" id="inputAge">
+        <option value="">選択してください</option>
+        <option value="10代">10代</option>
+        <option value="20代">20代</option>
+        <option value="30代">30代</option>
+        <option value="40代">40代</option>
+        <option value="50代">50代</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <div class="item">
+        <label for="inquiry">お問い合わせ内容</label>
+        <span>必須</span>
+      </div>
+      <textarea name="inquiry" id="inputInquiry" cols="30" rows="10" placeholder="お問い合わせ内容をご記入ください"></textarea>
+    </fieldset>
+    <input type="submit" id="submit" value="送信">
+  </form>
+  <script src="../lib/module/sample.js"></script>
+</body>
+
+<style>
+  fieldset {
+    border: none;
+  }
+
+  .item span {
+    background-color: aquamarine;
+  }
+
+  .err-msg-mail ,.err-msg-tel ,.err-msg-kana {
+    display: none;
+  }
+
+  .form-invalid {
+    display: block;
+    color: red;
+  }
+</style>
+
